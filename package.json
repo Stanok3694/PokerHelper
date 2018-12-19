@@ -1,0 +1,21 @@
+{
+  "name": "pokerhelper",
+  "version": "1.0.0",
+  "description": "simple pet project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "keywords": [
+    "nodejs",
+    "npm",
+    "js",
+    "es6"
+  ],
+  "author": "konstantin.nesterov@emergn.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
