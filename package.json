@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "test"
+    "test": "jest"
   },
   "keywords": [
     "nodejs",
@@ -17,5 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
   }
 }
