@@ -1,14 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
 
 const findForAll = require('./findForAll');
-const testData = require('./testData');
 
-const randomfunc = (req, res, next) => {
-    res.send(findForAll(testData.fourthCombination));
-    next();    
-}
+const jsonParsed = bodyParser.json();
 
-app.use(randomfunc);
+app.post('/rooooot', jsonParsed, (req, res) => {
+    res.send(findForAll(req.body));
+});
 
 app.listen(3000, () => console.log('app is initialized and listening on 3000 port'));
