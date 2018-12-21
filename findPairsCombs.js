@@ -1,5 +1,5 @@
 
-const findForAll = combArr => {
+const findPairsCombs = combArr => {
   const weightArr = combArr.map(e => e.weight);
   
   const uniqueCards = [...new Set(weightArr)];
@@ -23,7 +23,7 @@ const findForAll = combArr => {
   if (seniorComb[0] === 3 && seniorComb[2] > 1) return `Fullhouse: ${seniorComb[1]} and ${seniorComb[3]}`;
   if (seniorComb[0] === 3) return `Three of a kind: ${seniorComb[1]}`;
   if (seniorComb[0] === 4) return `Four of a kind:  ${seniorComb[1]}`;
-  return 'nothing'; 
+  return 'No pairs'; 
 };
 
-module.exports = findForAll;
+module.exports = findPairsCombs;
