@@ -3,12 +3,11 @@ const findPairsCombs = require('./findCombFuncs/findPairsCombs');
 const findSimpleStraight = require('./findCombFuncs/findSimpleStraight');
 
 const findBiggerComb = combArr => {
-    let currentComb = ['No combinations', 0];
-
-    if (findFlushComb(combArr)[1] > currentComb[1]) {currentComb = findFlushComb(combArr)};
-    if (findPairsCombs(combArr)[1] > currentComb[1]) {currentComb = findPairsCombs(combArr)};
-    if (findSimpleStraight(combArr)[1] > currentComb[1]) {currentComb = findSimpleStraight(combArr)};
-    return currentComb[0];
+    const wArr = [...combArr.hand, ...combArr.table]
+    
+    //const allCombs;
+    const allCombs = [...findFlushComb(wArr), ...findPairsCombs(wArr), findSimpleStraight(wArr)];
+    return allCombs;   
 }
 
 module.exports = findBiggerComb;

@@ -17,12 +17,14 @@ const findPairsCombs = combArr => {
   const seniorComb =[];
   seniorComb.push(cardCounts[0].count, cardCounts[0].weight, cardCounts[1].count, cardCounts[1].weight);
   
-  if (seniorComb[0] === 2 && seniorComb[2] === 2) return [`Two pairs: ${seniorComb[1]} and ${seniorComb[3]}`, 2];
-  if (seniorComb[0] === 2) return [`Pair: ${seniorComb[1]}`, 1];
-  if (seniorComb[0] === 3 && seniorComb[2] > 1) return [`Fullhouse: ${seniorComb[1]} and ${seniorComb[3]}`, 6];
-  if (seniorComb[0] === 3) return [`Three of a kind: ${seniorComb[1]}`, 3];
-  if (seniorComb[0] === 4) return [`Four of a kind:  ${seniorComb[1]}`, 7];
-  return ['No combinations', 0]; 
+  const allCombs = [];
+
+  if (seniorComb[0] >= 2 && seniorComb[2] === 2)  allCombs.push(2);
+  if (seniorComb[0] >= 2)  allCombs.push(1);
+  if (seniorComb[0] >= 3 && seniorComb[2] > 1)  allCombs.push(6);
+  if (seniorComb[0] >= 3)  allCombs.push(3);
+  if (seniorComb[0] >= 4)  allCombs.push(7);
+  return allCombs; 
 };
 
 module.exports = findPairsCombs;
