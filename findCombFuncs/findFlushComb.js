@@ -22,15 +22,15 @@ const findFlushComb = combArray => {
         flushArray.sort((prev,next) => next.weight - prev.weight);
         
         if (flushArray[0].weight - flushArray[4].weight === 4) {
-            if (flushArray[0].weight === 14) return 'ROYAL FLUSH!';
+            if (flushArray[0].weight === 14) return ['ROYAL FLUSH!', 9];
             
-            return `Straight flush: from ${flushArray[0].weight} to ${flushArray[4].weight}`;
+            return [`Straight flush: from ${flushArray[0].weight} to ${flushArray[4].weight}`, 8];
         }
 
-        return `Flush: ${flushComb[1]}`;
+        return [`Flush: ${flushComb[1]}`, 5];
     }
     
-    return 'No flush';
+    return ['No combinations', 0];
 }
 
 module.exports = findFlushComb;

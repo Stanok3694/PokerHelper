@@ -1,4 +1,3 @@
-
 const findPairsCombs = combArr => {
   const weightArr = combArr.map(e => e.weight);
   
@@ -23,7 +22,7 @@ const findPairsCombs = combArr => {
   if (seniorComb[0] === 3 && seniorComb[2] > 1) return `Fullhouse: ${seniorComb[1]} and ${seniorComb[3]}`;
   if (seniorComb[0] === 3) return `Three of a kind: ${seniorComb[1]}`;
   if (seniorComb[0] === 4) return `Four of a kind:  ${seniorComb[1]}`;
-  return 'No pairs'; 
+  return 'No combinations'; 
 };
 
 module.exports = findPairsCombs;
