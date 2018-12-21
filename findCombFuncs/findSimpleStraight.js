@@ -5,9 +5,11 @@ const findSimpleStraight = combArr => {
 
     uniqueCards.sort((prev, next) => next - prev);
 
-    if (uniqueCards[0] - uniqueCards[4] === 4) return [`Straight: from ${uniqueCards[0]} to ${uniqueCards[4]}`, 4];
-
+    //Hello W. E. T.
+    for (i=0; i < uniqueCards.length - 4; i++) {
+        if (uniqueCards[i] - uniqueCards[i+4] === 4) return [`Straight: from ${uniqueCards[i]} to ${uniqueCards[i+4]}`, 4];
+    }
     return ['No combinations', 0];
 }
 
-module.exports = findSimpleStraight
+module.exports = findSimpleStraight;
