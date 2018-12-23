@@ -8,7 +8,9 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "pretest": "eslint --ignore-path .gitignore .",
-    "validate": "npm-run-all --parallel test pretest"
+    "validate": "npm-run-all --parallel test pretest",
+    "precommit": "npm run validate",
+    "prepush": "npm run validate"
   },
   "keywords": [
     "nodejs",

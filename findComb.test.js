@@ -4,7 +4,7 @@ const testData = require('./testData');
 
 describe('poker Helper', () => {
 
-  test.skip('1) cover pair, two pairs, three and fourth and fullhouse', () => {
+  test('1) cover pair, two pairs, three and fourth and fullhouse', () => {
       // SO: start Code Review #6.4 link:
 
       // SO: Code Review #8:
@@ -28,7 +28,7 @@ describe('poker Helper', () => {
 
   /* 
     there are to many reasons for split your expectaions into separate test.scenarios.
-    for example: u can skip target scenarion like I did it above.
+    for example: u can skip target scenarion like I did it above. (test.skip(1)...blabla...)
 
     u have to rewrite your tests like I did it below for UNCOVERED STRAIGHT COMBINATION, dude.
   */
