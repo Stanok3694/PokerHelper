@@ -75,5 +75,65 @@ module.exports = {
         { "weight": "1", "suit": "a" },
         { "weight": "6", "suit": "b" },
         { "weight": "6", "suit": "a" }]
-    }
+    },
+    // SO: Code Review #11:
+
+    // You have to name all your combinations in terms of test cases which will be tested with it.
+    // as I did - non sixth combination but straight
+    
+    // please, change all your test combinations.
+    
+    // also, you can split this file by combinations and use these like:
+
+    /*
+        const fullHouse = require('./fullHoude.testData.js');
+        -//-
+        -//-
+
+        const testData = {
+            fullHouse,
+            pair,
+            straight,
+            ...
+            ...
+        };
+
+        module.exports = testData;
+
+    */
+
+    straight: {
+        hand: [
+            {
+                weight: "1",
+                suit: "a",
+            },
+            {
+                weight: "2",
+                suit: "b",
+            },
+        ],
+        table: [
+            {
+                weight: "3",
+                suit: "a",
+            },
+            {
+                weight: "4",
+                suit: "b",
+            },
+            {
+                weight: "5",
+                suit: "a",
+            },
+            {
+                weight: "11",
+                suit: "b",
+            },
+            {
+                weight: "12",
+                suit: "a",
+            },
+        ],
+    },
 };
