@@ -1,37 +1,15 @@
-const findPairsCombs = combArr => {
-  // SO: start Code Review #6.1 link: 
-  const weightArr = combArr.map(e => e.weight);
-  
-  const uniqueCards = [...new Set(weightArr)];
-  
-  const cardCounts = uniqueCards
-    .map(card => {
-      const count = weightArr.filter(el => el === card).length;
+const prepareCardsPool = require('./prepareCardsPool');
 
-      return {
-        weight: card,
-        count,
-      }
-    })
-    .sort((prev, next) => next.count - prev.count);
+const findPairsCombs = (cardsArray) => {
+  const prepCardsArray = prepareCardsPool(cardsArray, 'weight');
+  const allPairsCombinations = [];
 
-  // SO: end Code Review #6.1 link.
-
-  // SO: start Code Review #6.2 and 6.3 link: 
-
-  const seniorComb =[];
-  seniorComb.push(cardCounts[0].count, cardCounts[0].weight, cardCounts[1].count, cardCounts[1].weight);
-  
-    // SO: end Code Review #6.2 and 6.3 link.
-
-  const allCombs = [];
-
-  if (seniorComb[0] >= 2 && seniorComb[2] === 2)  allCombs.push(2);
-  if (seniorComb[0] >= 2)  allCombs.push(1);
-  if (seniorComb[0] >= 3 && seniorComb[2] > 1)  allCombs.push(6);
-  if (seniorComb[0] >= 3)  allCombs.push(3);
-  if (seniorComb[0] >= 4)  allCombs.push(7);
-  return allCombs; 
+  if (prepCardsArray[0].count >= 2 && prepCardsArray[1].count === 2) allPairsCombinations.push(2);
+  if (prepCardsArray[0].count >= 2) allPairsCombinations.push(1);
+  if (prepCardsArray[0].count >= 3 && prepCardsArray[1].count > 1) allPairsCombinations.push(6);
+  if (prepCardsArray[0].count >= 3) allPairsCombinations.push(3);
+  if (prepCardsArray[0].count >= 4) allPairsCombinations.push(7);
+  return allPairsCombinations;
 };
 
 module.exports = findPairsCombs;
