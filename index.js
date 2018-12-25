@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const findBiggerComb = require('./findBiggerComb');
+const findBiggerComb = require('./lookingForCombs/findBiggerComb');
 
 app.use(bodyParser.json());
 
