@@ -1,11 +1,13 @@
 /* eslint-disable jest/no-disabled-tests */
 const findBiggerComb = require('../lookingForCombs/findBiggerComb');
 const testData = require('./testData');
+const makeMagic = require('../utilities/makeMagic');
+const makeNoCombinations = require('../datagen v 2.0/makeSome/makeNoCombinations');
 
 describe('poker Helper', () => {
   describe('testing findPairsCombs block', () => {
     test.skip('1) should return pair', () => {
-      expect(findBiggerComb()).toBe('Pair');
+      expect(findBiggerComb(makeMagic(makeNoCombinations()))).toBe('Pair');
     });
 
     test.skip('2) should return two pairs', () => {
@@ -46,9 +48,9 @@ describe('poker Helper', () => {
     });
   });
 
-  describe.skip('testing no combinations (older card)', () => {
+  describe('testing no combinations (older card)', () => {
     test('10) should return no combinations', () => {
-      expect(findBiggerComb(testData.none)).toBe('Older card');
+      expect(findBiggerComb(makeMagic(makeNoCombinations()))).toBe('Older card');
     });
   });
 });

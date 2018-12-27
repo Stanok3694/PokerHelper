@@ -1,8 +1,9 @@
-/*
-получаем из функций типа Make массив объектов (карт), после чего склеиваем их в объект вида:
-{
-    hand:[{},{}],
-    table:[{}, {}, {}, {}, {}]
-}
-и передаем на проверку
-*/
+const makeMagic = (arr) => {
+  const cardPool = {
+    hand: [...arr.splice(0, 2)],
+    table: [...arr.splice(0, 5)],
+  };
+  return cardPool;
+};
+
+module.exports = makeMagic;
