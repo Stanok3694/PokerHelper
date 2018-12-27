@@ -1,16 +1,15 @@
 /* eslint-disable jest/no-disabled-tests */
 const findBiggerComb = require('../lookingForCombs/findBiggerComb');
 const testData = require('./testData');
-const indexAbc = require('../datagen/indexAbc');
 
 describe('poker Helper', () => {
   describe('testing findPairsCombs block', () => {
     test.skip('1) should return pair', () => {
-      expect(findBiggerComb(indexAbc())).toBe('Pair');
+      expect(findBiggerComb()).toBe('Pair');
     });
 
     test.skip('2) should return two pairs', () => {
-      expect(findBiggerComb(indexAbc())).toBe('Two pairs');
+      expect(findBiggerComb()).toBe('Two pairs');
     });
 
     test.skip('3) should return three of a kind', () => {

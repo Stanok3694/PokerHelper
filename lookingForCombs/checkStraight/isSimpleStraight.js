@@ -1,7 +1,7 @@
 const findSimpleStraight = (cardsArray) => {
-  const weightArr = cardsArray.map(e => e.weight);
+  const valueArr = cardsArray.map(e => e.value);
 
-  const uniqueCards = [...new Set(weightArr)];
+  const uniqueCards = [...new Set(valueArr)];
 
   uniqueCards.sort((prev, next) => next - prev);
 

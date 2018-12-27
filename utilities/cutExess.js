@@ -1,6 +1,6 @@
 const cutExess = (mass, pointer, pool) => {
   let newMass;
-  const y = mass.indexOf(pointer);
+  const y = mass.value.indexOf(pointer);
 
   if (y < pool - 1) {
     newMass = mass.splice(0, pool + y);

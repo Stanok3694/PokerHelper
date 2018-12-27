@@ -3,16 +3,16 @@ const randomLetter = () => {
   rand = Math.floor(rand);
   switch (rand) {
     case 0:
-      rand = 'a';
+      rand = 'diamonds';
       break;
     case 1:
-      rand = 'b';
+      rand = 'clubs';
       break;
     case 2:
-      rand = 'c';
+      rand = 'hearts';
       break;
     case 3:
-      rand = 'd';
+      rand = 'spades';
       break;
     default:
       break;

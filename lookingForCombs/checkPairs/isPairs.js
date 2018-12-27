@@ -1,7 +1,7 @@
-const prepareCardsPool = require('./prepareCardsPool');
+const prepareCardsPool = require('../../utilities/prepareCardsPool');
 
 const findPairsCombs = (cardsArray) => {
-  const prepCardsArray = prepareCardsPool(cardsArray, 'weight');
+  const prepCardsArray = prepareCardsPool(cardsArray, 'value');
   const allPairsCombinations = [];
 
   if (prepCardsArray[0].count >= 2 && prepCardsArray[1].count === 2) allPairsCombinations.push(2);

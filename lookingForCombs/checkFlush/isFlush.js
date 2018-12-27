@@ -1,4 +1,4 @@
-const prepareCardsPool = require('./prepareCardsPool');
+const prepareCardsPool = require('../../utilities/prepareCardsPool');
 
 const findFlushComb = (cardsArray) => {
   const prepCardsArray = prepareCardsPool(cardsArray, 'suit');
@@ -6,10 +6,10 @@ const findFlushComb = (cardsArray) => {
 
   if (prepCardsArray[0].count >= 5) {
     const flushArray = cardsArray.filter(card => card.suit === prepCardsArray[0].suit);
-    flushArray.sort((prev, next) => next.weight - prev.weight);
+    flushArray.sort((prev, next) => next.value - prev.value);
 
-    if (flushArray[0].weight - flushArray[4].weight === 4) {
-      if (flushArray[0].weight === 14) flushCombinations.push(9);
+    if (flushArray[0].value - flushArray[4].value === 4) {
+      if (flushArray[0].value === 14) flushCombinations.push(9);
       // !!!!!!
 
       flushCombinations.push(8);

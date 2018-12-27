@@ -1,0 +1,13 @@
+const deck = require('../../dictionary and other/cardDeck');
+const randomize = require('../../utilities/randomInteger');
+const fill = require('../../utilities/fill');
+const checkEqualSuit = require('../../utilities/checkEqualSuit');
+
+
+const makeNoComb = () => {
+  const copyDeck = deck.splice(randomize(0, 3) * 12, 12);
+  const noCombArr = fill(copyDeck, randomize(5, 7));
+  return checkEqualSuit(noCombArr);
+};
+
+module.exports = makeNoComb;

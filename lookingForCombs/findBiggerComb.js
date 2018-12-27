@@ -1,7 +1,7 @@
-const findFlushComb = require('./isFlush');
-const findPairsCombs = require('./isPairs');
-const findSimpleStraight = require('./isSimpleStraight');
-const combDictionary = require('../combDictionary');
+const findFlushComb = require('../lookingForCombs/checkFlush/isFlush');
+const findPairsCombs = require('../lookingForCombs/checkPairs/isPairs');
+const findSimpleStraight = require('../lookingForCombs/checkStraight/isSimpleStraight');
+const combDictionary = require('../dictionary and other/combDictionary');
 
 
 const findBiggerComb = (cardsPool) => {
