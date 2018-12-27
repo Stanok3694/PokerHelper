@@ -4,13 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const findBiggerComb = require('./lookingForCombs/findBiggerComb');
-const indexAbc = require('./datagen/indexAbc');
+
 
 app.use(bodyParser.json());
 
 app.post('/getHigherCombination', (req, res) => {
-  const mass = indexAbc();
-  const higherCombination = findBiggerComb(mass);
+  const higherCombination = findBiggerComb();
   res.send(higherCombination);
 });
 
