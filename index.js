@@ -1,16 +1,28 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+// const findBiggerComb = require('./lookingForCombs/findBiggerComb');
+const make = require('./datagen v 2.0/iLoveSwitches');
+const compare = require('./lookingForCombs/findCombination');
+const findRoyalStraight = require('./lookingForCombs/checkFlush/isRoyalStraight');
+// const findStraightFlush = require('./lookingForCombs/checkFlush/isStraightFlush');
+// const findSimpleFlush = require('./lookingForCombs/checkFlush/isSimpleFlush');
+// const findSimpleStraight = require('./lookingForCombs/checkStraight/isSimpleStraight');
+// const findPair = require('./lookingForCombs/checkPairs/isPair');
+// const findTwoPairs = require('./lookingForCombs/checkPairs/isTwoPairs');
+// const findThree = require('./lookingForCombs/checkPairs/isThree');
+// const findFour = require('./lookingForCombs/checkPairs/isFour');
+// const findFullhouse = require('./lookingForCombs/checkPairs/isFullhouse');
+// const makeMagic = require('./utilities/makeMagic');
+// const makeNoComb = require('./datagen v 2.0/makeSome/makeNoCombinations');
+
 
 const app = express();
-
-const findBiggerComb = require('./lookingForCombs/findBiggerComb');
-const indexAbc = require('./datagen/indexAbc');
 
 app.use(bodyParser.json());
 
 app.post('/getHigherCombination', (req, res) => {
-  const mass = indexAbc();
-  const higherCombination = findBiggerComb(mass);
+  // const higherCombination = compare(findSimpleFlush(make('flush')));
+  const higherCombination = compare(findRoyalStraight(make('royalflush')));
   res.send(higherCombination);
 });
 
