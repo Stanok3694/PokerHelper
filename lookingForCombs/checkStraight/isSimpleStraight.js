@@ -6,8 +6,7 @@ const findSimpleStraight = (cardsArray) => {
   uniqueCards.sort((prev, next) => next - prev);
 
 
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < uniqueCards.length - 4; i++) {
+  for (let i = 0; i < uniqueCards.length - 4; i += 1) {
     if (uniqueCards[i] - uniqueCards[i + 4] === 4) return 4;
   }
 

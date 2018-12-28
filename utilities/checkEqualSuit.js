@@ -3,13 +3,13 @@ const randomizeS = require('./randomSuit');
 
 
 const checkSuit = (arr) => {
-  for (let i = 0; i < arr.length; i += 1) {
-    // eslint-disable-next-line no-param-reassign
-    arr[i].suit = randomizeS();
+  const newArray = arr;
+  for (let i = 0; i < newArray.length; i += 1) {
+    newArray[i].suit = randomizeS();
   }
-  const arrInfo = prepareCardsPool(arr, 'suit');
-  if (arrInfo[0].count > 4) checkSuit(arr);
-  const fixedArray = arr;
+  const arrInfo = prepareCardsPool(newArray, 'suit');
+  if (arrInfo[0].count > 4) checkSuit(newArray);
+  const fixedArray = newArray;
   return fixedArray;
 };
 

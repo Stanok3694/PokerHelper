@@ -1,25 +1,36 @@
-const findFlushComb = require('../lookingForCombs/checkFlush/isFlush');
-const findPairsCombs = require('../lookingForCombs/checkPairs/isPairs');
-const findSimpleStraight = require('../lookingForCombs/checkStraight/isSimpleStraight');
-const combDictionary = require('../dictionary and other/combDictionary');
-
+const findCombination = require('./findCombination');
+const findRoyalStraight = require('./checkFlush/isRoyalStraight');
+const findStraightFlush = require('./checkFlush/isStraightFlush');
+const findSimpleFlush = require('./checkFlush/isSimpleFlush');
+const findSimpleStraight = require('./checkStraight/isSimpleStraight');
+const findPair = require('./checkPairs/isPair');
+const findTwoPairs = require('./checkPairs/isTwoPairs');
+const findThree = require('./checkPairs/isThree');
+const findFour = require('./checkPairs/isFour');
+const findFullhouse = require('./checkPairs/isFullhouse');
 
 const findBiggerComb = (cardsPool) => {
   const cardsArray = [...cardsPool.hand, ...cardsPool.table];
   const allCombinations = [
     0,
 
-    ...findFlushComb(cardsArray),
+    findRoyalStraight(cardsArray),
+    findSimpleFlush(cardsArray),
+    findStraightFlush(cardsArray),
 
-    ...findPairsCombs(cardsArray),
+    findPair(cardsArray),
+    findTwoPairs(cardsArray),
+    findThree(cardsArray),
+    findFour(cardsArray),
+    findFullhouse(cardsArray),
 
     findSimpleStraight(cardsArray),
   ];
 
   allCombinations.sort((prev, next) => next - prev);
 
-  const result = combDictionary.find(dictionary => dictionary.value === allCombinations[0]);
-  return result.combination;
+
+  return findCombination(allCombinations[0]);
 };
 
 module.exports = findBiggerComb;

@@ -5,18 +5,17 @@ const deck = require('../../dictionary and other/cardDeck');
 
 const makeStraight = (isRoyal) => {
   const pool = randomize(5, 7);
-  let straightArr = deck.splice(randomize(0, 3) * 12, 12);
-  if (isRoyal) straightArr.splice(0, 13 - pool);
-  let x;
+  const copyDeck = [...deck];
+  let straightArr = copyDeck.splice(randomize(0, 3) * 13, 13);
+  if (isRoyal) return straightArr.splice(13 - pool, pool);
 
   while (straightArr.length > pool) {
-    x = randomize(straightArr[0].value, straightArr[straightArr.length - 1].value);
-    straightArr = cutExess(straightArr, x, pool);
+    const firstElement = straightArr[0].value;
+    const lastElement = straightArr[straightArr.length - 1].value;
+    const currentPosition = randomize(firstElement, lastElement);
+    straightArr = cutExess(straightArr, currentPosition, pool);
+    // console.log(straightArr);
   }
-
-  if (!isRoyal && straightArr[pool - 1].value === 14) {
-    straightArr[pool - 1].value = randomize(2, 13);
-  } // max length
 
   return straightArr;
 };
