@@ -4,7 +4,7 @@ const makeNoComb = require('./makeSome/makeNoCombinations');
 const makeStraight = require('./makeSome/makeStraight');
 // const makeMagic = require('../utilities/makeMagic');
 
-const whyYouDontLikeIFandSwitch = (type) => {
+const distributor = (type) => {
   let currentArr = [];
   switch (type) {
     case 'pair':
@@ -35,4 +35,4 @@ const whyYouDontLikeIFandSwitch = (type) => {
   return currentArr;
 };
 
-module.exports = whyYouDontLikeIFandSwitch;
+module.exports = distributor;

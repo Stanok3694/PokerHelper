@@ -4,8 +4,8 @@ const fill = require('../../utilities/fill');
 
 
 const makePairs = (type) => {
-  const myDeck = [...deck];
-  const deckArray = myDeck.splice(randomize(0, 3) * 13, 13);
+  const copyDeck = [...deck];
+  const deckArray = copyDeck.splice(randomize(0, 3) * 13, 13);
   const pairArray = fill(deckArray, randomize(5, 7));
   const y = pairArray.length - 1;
 

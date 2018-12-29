@@ -10,11 +10,10 @@ const makeStraight = (isRoyal) => {
   if (isRoyal) return straightArr.splice(13 - pool, pool);
 
   while (straightArr.length > pool) {
-    const firstElement = straightArr[0].value;
-    const lastElement = straightArr[straightArr.length - 1].value;
-    const currentPosition = randomize(firstElement, lastElement);
+    const lowerRandBorder = straightArr[0].value;
+    const upperRandBorber = straightArr[straightArr.length - 1].value;
+    const currentPosition = randomize(lowerRandBorder, upperRandBorber);
     straightArr = cutExess(straightArr, currentPosition, pool);
-    // console.log(straightArr);
   }
 
   return straightArr;
