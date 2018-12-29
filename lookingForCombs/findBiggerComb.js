@@ -13,24 +13,23 @@ const findBiggerComb = (cardsPool) => {
   const cardsArray = [...cardsPool.hand, ...cardsPool.table];
   const allCombinations = [
     0,
-
-    findRoyalStraight(cardsArray),
-    findSimpleFlush(cardsArray),
-    findStraightFlush(cardsArray),
-
     findPair(cardsArray),
     findTwoPairs(cardsArray),
     findThree(cardsArray),
-    findFour(cardsArray),
-    findFullhouse(cardsArray),
-
     findSimpleStraight(cardsArray),
+    findSimpleFlush(cardsArray),
+    findFullhouse(cardsArray),
+    findFour(cardsArray),
+    findRoyalStraight(cardsArray),
+    findSimpleFlush(cardsArray),
+    findStraightFlush(cardsArray),
+    findRoyalStraight(cardsArray),
   ];
 
-  allCombinations.sort((prev, next) => next - prev);
+  const biggerComb = allCombinations.findIndex(true);
 
 
-  return findCombination(allCombinations[0]);
+  return findCombination(biggerComb + 1);
 };
 
 module.exports = findBiggerComb;

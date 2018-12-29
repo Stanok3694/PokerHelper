@@ -15,7 +15,7 @@ const findFullhouse = require('../lookingForCombs/checkPairs/isFullhouse');
 const makeMagic = require('../utilities/makeMagic');
 const makeNoComb = require('../datagen v 2.0/makeSome/makeNoCombinations');
 
-describe('poker Helper', () => {
+describe.skip('poker Helper', () => {
   describe('testing findPairsCombs block', () => {
     test('1) should return pair', () => {
       expect(compare(findPair(make('pair')))).toBe('Pair');

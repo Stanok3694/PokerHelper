@@ -7,10 +7,10 @@ const findSimpleStraight = (cardsArray) => {
 
 
   for (let i = 0; i < uniqueCards.length - 4; i += 1) {
-    if (uniqueCards[i] - uniqueCards[i + 4] === 4) return 4;
+    if (uniqueCards[i] - uniqueCards[i + 4] === 4) return true;
   }
 
-  return 0;
+  return false;
 };
 
 module.exports = findSimpleStraight;

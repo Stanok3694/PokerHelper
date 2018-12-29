@@ -6,9 +6,9 @@ const findRoyalStraight = (cardsArray) => {
   if (isStrFlush(cardsArray)) {
     const flushArray = cardsArray.filter(card => card.suit === prepArray[0].suit);
     flushArray.sort((prev, next) => next.value - prev.value);
-    if (flushArray[0].value === 14) return 9;
+    if (flushArray[0].value === 14) return true;
   }
-  return 0;
+  return false;
 };
 
 
