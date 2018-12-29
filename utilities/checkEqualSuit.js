@@ -3,7 +3,7 @@ const randomizeS = require('./randomSuit');
 
 
 const checkSuit = (arr) => {
-  const newArray = arr;
+  const newArray = [...arr];
   for (let i = 0; i < newArray.length; i += 1) {
     newArray[i].suit = randomizeS();
   }

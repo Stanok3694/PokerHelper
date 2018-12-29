@@ -1,5 +1,5 @@
-const randomInteger = (min, max) => {
-  let rand = min + Math.random() * (max + 1 - min);
+const randomInteger = (lowerBorder, upperBorder) => {
+  let rand = lowerBorder + Math.random() * (upperBorder + 1 - lowerBorder);
   rand = Math.floor(rand);
   return rand;
 };

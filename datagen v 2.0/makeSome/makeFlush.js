@@ -10,7 +10,7 @@ const makeFlush = (type) => {
   let flushArr = fill(oneSuitArr, pool);
   if (type === 'royalflush') flushArr = makeStraight(true);
   if (type === 'straightflush') flushArr = makeStraight(false);
-  // console.log(flushArr);
+
   return flushArr;
 };
 
